@@ -16,8 +16,8 @@
 		7D71FEA01C7AD95C008F54E7 /* NDSearchToolUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D71FE9F1C7AD95C008F54E7 /* NDSearchToolUITests.m */; };
 		7D71FEAF1C7AD9DE008F54E7 /* NDSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D71FEAE1C7AD9DE008F54E7 /* NDSearchViewController.m */; };
 		7D71FEB11C7AF3E2008F54E7 /* stockList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7D71FEB01C7AF3E2008F54E7 /* stockList.plist */; };
-		7D71FEB41C7AF6FB008F54E7 /* SearchModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D71FEB31C7AF6FB008F54E7 /* SearchModel.m */; };
-		7D71FEB71C7AFB7A008F54E7 /* SearchTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D71FEB61C7AFB7A008F54E7 /* SearchTool.m */; };
+		7D71FEB41C7AF6FB008F54E7 /* NDSearchModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D71FEB31C7AF6FB008F54E7 /* NDSearchModel.m */; };
+		7D71FEB71C7AFB7A008F54E7 /* NDSearchTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D71FEB61C7AFB7A008F54E7 /* NDSearchTool.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,10 +55,10 @@
 		7D71FEAD1C7AD9DE008F54E7 /* NDSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NDSearchViewController.h; sourceTree = "<group>"; };
 		7D71FEAE1C7AD9DE008F54E7 /* NDSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NDSearchViewController.m; sourceTree = "<group>"; };
 		7D71FEB01C7AF3E2008F54E7 /* stockList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = stockList.plist; sourceTree = "<group>"; };
-		7D71FEB21C7AF6FB008F54E7 /* SearchModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchModel.h; sourceTree = "<group>"; };
-		7D71FEB31C7AF6FB008F54E7 /* SearchModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchModel.m; sourceTree = "<group>"; };
-		7D71FEB51C7AFB7A008F54E7 /* SearchTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTool.h; sourceTree = "<group>"; };
-		7D71FEB61C7AFB7A008F54E7 /* SearchTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTool.m; sourceTree = "<group>"; };
+		7D71FEB21C7AF6FB008F54E7 /* NDSearchModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NDSearchModel.h; sourceTree = "<group>"; };
+		7D71FEB31C7AF6FB008F54E7 /* NDSearchModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NDSearchModel.m; sourceTree = "<group>"; };
+		7D71FEB51C7AFB7A008F54E7 /* NDSearchTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NDSearchTool.h; sourceTree = "<group>"; };
+		7D71FEB61C7AFB7A008F54E7 /* NDSearchTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NDSearchTool.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,10 +113,10 @@
 				7D71FE7E1C7AD95B008F54E7 /* AppDelegate.m */,
 				7D71FEAD1C7AD9DE008F54E7 /* NDSearchViewController.h */,
 				7D71FEAE1C7AD9DE008F54E7 /* NDSearchViewController.m */,
-				7D71FEB21C7AF6FB008F54E7 /* SearchModel.h */,
-				7D71FEB31C7AF6FB008F54E7 /* SearchModel.m */,
-				7D71FEB51C7AFB7A008F54E7 /* SearchTool.h */,
-				7D71FEB61C7AFB7A008F54E7 /* SearchTool.m */,
+				7D71FEB21C7AF6FB008F54E7 /* NDSearchModel.h */,
+				7D71FEB31C7AF6FB008F54E7 /* NDSearchModel.m */,
+				7D71FEB51C7AFB7A008F54E7 /* NDSearchTool.h */,
+				7D71FEB61C7AFB7A008F54E7 /* NDSearchTool.m */,
 				7D71FEB01C7AF3E2008F54E7 /* stockList.plist */,
 				7D71FE831C7AD95B008F54E7 /* Main.storyboard */,
 				7D71FE861C7AD95C008F54E7 /* Assets.xcassets */,
@@ -284,11 +284,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D71FEB71C7AFB7A008F54E7 /* SearchTool.m in Sources */,
+				7D71FEB71C7AFB7A008F54E7 /* NDSearchTool.m in Sources */,
 				7D71FE7F1C7AD95B008F54E7 /* AppDelegate.m in Sources */,
 				7D71FEAF1C7AD9DE008F54E7 /* NDSearchViewController.m in Sources */,
 				7D71FE7C1C7AD95B008F54E7 /* main.m in Sources */,
-				7D71FEB41C7AF6FB008F54E7 /* SearchModel.m in Sources */,
+				7D71FEB41C7AF6FB008F54E7 /* NDSearchModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,6 +514,7 @@
 				7D71FEA61C7AD95C008F54E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7D71FEA71C7AD95C008F54E7 /* Build configuration list for PBXNativeTarget "NDSearchToolTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +523,7 @@
 				7D71FEA91C7AD95C008F54E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7D71FEAA1C7AD95C008F54E7 /* Build configuration list for PBXNativeTarget "NDSearchToolUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +532,7 @@
 				7D71FEAC1C7AD95C008F54E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

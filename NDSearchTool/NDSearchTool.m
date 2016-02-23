@@ -1,18 +1,18 @@
 //
-//  SearchTool.m
+//  NDSearchTool.m
 //  NDSearchTool
 //
 //  Created by NDMAC on 16/2/22.
 //  Copyright © 2016年 NDEducation. All rights reserved.
 //
 
-#import "SearchTool.h"
+#import "NDSearchTool.h"
 
-@implementation SearchTool
+@implementation NDSearchTool
 
-+ (SearchTool *)tool
++ (NDSearchTool *)tool
 {
-    SearchTool *tool = [[SearchTool alloc] init];
+    NDSearchTool *tool = [[NDSearchTool alloc] init];
     return tool;
 }
 

@@ -1,13 +1,13 @@
 //
-//  SearchModel.m
+//  NDSearchModel.m
 //  NDSearchTool
 //
 //  Created by NDMAC on 16/2/22.
 //  Copyright © 2016年 NDEducation. All rights reserved.
 //
 
-#import "SearchModel.h"
+#import "NDSearchModel.h"
 
-@implementation SearchModel
+@implementation NDSearchModel
 
 @end

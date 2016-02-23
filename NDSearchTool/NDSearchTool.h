@@ -1,5 +1,5 @@
 //
-//  SearchTool.h
+//  NDSearchTool.h
 //  NDSearchTool
 //
 //  Created by NDMAC on 16/2/22.
@@ -8,9 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface SearchTool : NSObject
+@interface NDSearchTool : NSObject
 
-+ (SearchTool *)tool;
++ (NDSearchTool *)tool;
 
 - (NSArray *)searchWithFieldArray:(NSArray *)fieldArray
                       inputString:(NSString *)inputString

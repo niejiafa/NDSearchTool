@@ -72,7 +72,7 @@
         <!--单个搜索-->
         <scene sceneID="lLY-2e-kPP">
             <objects>
-                <viewController id="tEF-EB-2RP" customClass="NDSearchViewController" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="tEF-EB-2RP" customClass="NDSearchViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oTs-FJ-w5p"/>
                         <viewControllerLayoutGuide type="bottom" id="tiF-Z0-3XO"/>
@@ -81,15 +81,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" placeholder="您可以搜索股票名称，简拼或者代码" translatesAutoresizingMaskIntoConstraints="NO" id="F3z-sb-D64">
-                                <rect key="frame" x="0.0" y="64" width="600" height="44"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="tEF-EB-2RP" id="ogW-HV-7cU"/>
-                                </connections>
-                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4z4-9b-8M6">
-                                <rect key="frame" x="0.0" y="108" width="600" height="492"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="tEF-EB-2RP" id="PV3-PK-VOp"/>
@@ -99,26 +92,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="F3z-sb-D64" firstAttribute="top" secondItem="oTs-FJ-w5p" secondAttribute="bottom" id="DNv-AL-zIp"/>
-                            <constraint firstItem="4z4-9b-8M6" firstAttribute="top" secondItem="oTs-FJ-w5p" secondAttribute="bottom" constant="44" id="DTb-Xh-TV7"/>
-                            <constraint firstItem="4z4-9b-8M6" firstAttribute="top" secondItem="Iqr-wE-qYU" secondAttribute="topMargin" constant="108" id="KPN-ix-XJd"/>
-                            <constraint firstItem="F3z-sb-D64" firstAttribute="leading" secondItem="Iqr-wE-qYU" secondAttribute="leadingMargin" constant="-20" id="LtQ-TO-ne4"/>
                             <constraint firstItem="tiF-Z0-3XO" firstAttribute="top" secondItem="4z4-9b-8M6" secondAttribute="bottom" id="WsQ-yu-Yvi"/>
-                            <constraint firstItem="4z4-9b-8M6" firstAttribute="top" secondItem="F3z-sb-D64" secondAttribute="bottom" id="cW8-wx-PPJ"/>
+                            <constraint firstItem="4z4-9b-8M6" firstAttribute="top" secondItem="oTs-FJ-w5p" secondAttribute="bottom" id="YUi-O3-TWn"/>
                             <constraint firstItem="4z4-9b-8M6" firstAttribute="leading" secondItem="Iqr-wE-qYU" secondAttribute="leadingMargin" constant="-20" id="kfD-5Y-YtP"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="F3z-sb-D64" secondAttribute="trailing" constant="-20" id="qxk-UP-h7a"/>
                             <constraint firstAttribute="trailingMargin" secondItem="4z4-9b-8M6" secondAttribute="trailing" constant="-20" id="xX8-nz-T45"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="KPN-ix-XJd"/>
-                                <exclude reference="cW8-wx-PPJ"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="单个搜索" id="cee-qU-uUC"/>
                     <connections>
-                        <outlet property="searchBar" destination="F3z-sb-D64" id="Jqq-QU-wjU"/>
                         <outlet property="tableView" destination="4z4-9b-8M6" id="zeg-Ct-fMH"/>
                     </connections>
                 </viewController>
