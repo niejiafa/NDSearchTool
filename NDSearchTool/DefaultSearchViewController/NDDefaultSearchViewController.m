@@ -10,7 +10,7 @@
 #import "NDSearchModel.h"
 #import "NDSearchTool.h"
 
-@interface NDDefaultSearchViewController () <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate>
+@interface NDDefaultSearchViewController () <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
 
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
 
@@ -26,7 +26,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.searchDataSource = self.dataSource;
     self.tableView.tableHeaderView = self.searchBar;
 }
 
@@ -37,7 +36,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (self.tableView == tableView) {
-        return self.searchDataSource.count;
+        return self.dataSource.count;
     }
     
     return self.searchDataSource.count;
@@ -51,7 +50,12 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
     }
     
-    NDSearchModel *model = self.searchDataSource[indexPath.row];
+    NDSearchModel *model;
+    if (self.tableView == tableView) {
+        model = self.dataSource[indexPath.row];
+    } else {
+        model = self.searchDataSource[indexPath.row];
+    }
     
     cell.textLabel.text = [NSString stringWithFormat:@"%@",model.name];
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%@",model.code];
@@ -65,19 +69,6 @@
 {
     self.searchDataSource = (NSMutableArray *)[[NDSearchTool tool] searchWithFieldArray:@[@"name",@"pingyin",@"code"] inputString:searchText inArray:self.dataSource];
     [self.searchDisplayController.searchResultsTableView reloadData];
-}
-
-#pragma  mark - UISearchDisplayDelegate
-
-- (void)searchDisplayController:(UISearchDisplayController *)controller willShowSearchResultsTableView:(UITableView *)tableView
-{
-    
-    
-}
-
-- (void)searchDisplayController:(UISearchDisplayController *)controller willHideSearchResultsTableView:(UITableView *)tableView
-{
-    
 }
 
 #pragma mark - getter and setter
@@ -124,7 +115,6 @@
     }
     
     _searchDisplayController = [[UISearchDisplayController alloc] initWithSearchBar:self.searchBar contentsController:self];
-    _searchDisplayController.delegate = self;
     _searchDisplayController.searchResultsTableView.dataSource = self;
     _searchDisplayController.searchResultsTableView.delegate = self;
     

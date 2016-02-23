@@ -19,6 +19,8 @@
 		7D71FEB71C7AFB7A008F54E7 /* NDSearchTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D71FEB61C7AFB7A008F54E7 /* NDSearchTool.m */; };
 		7D71FEC01C7C2A11008F54E7 /* NDDefaultSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D71FEBC1C7C2A11008F54E7 /* NDDefaultSearchViewController.m */; };
 		7D71FEC11C7C2A11008F54E7 /* NDDefaultFuzzySearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D71FEBF1C7C2A11008F54E7 /* NDDefaultFuzzySearchViewController.m */; };
+		7D71FED31C7C4F45008F54E7 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D71FED01C7C4F45008F54E7 /* UIImage+ImageEffects.m */; };
+		7D71FED41C7C4F45008F54E7 /* UIImageView+LBBlurredImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D71FED21C7C4F45008F54E7 /* UIImageView+LBBlurredImage.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,10 @@
 		7D71FEBC1C7C2A11008F54E7 /* NDDefaultSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NDDefaultSearchViewController.m; sourceTree = "<group>"; };
 		7D71FEBE1C7C2A11008F54E7 /* NDDefaultFuzzySearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NDDefaultFuzzySearchViewController.h; sourceTree = "<group>"; };
 		7D71FEBF1C7C2A11008F54E7 /* NDDefaultFuzzySearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NDDefaultFuzzySearchViewController.m; sourceTree = "<group>"; };
+		7D71FECF1C7C4F45008F54E7 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		7D71FED01C7C4F45008F54E7 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		7D71FED11C7C4F45008F54E7 /* UIImageView+LBBlurredImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+LBBlurredImage.h"; sourceTree = "<group>"; };
+		7D71FED21C7C4F45008F54E7 /* UIImageView+LBBlurredImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+LBBlurredImage.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +120,7 @@
 			children = (
 				7D71FE7D1C7AD95B008F54E7 /* AppDelegate.h */,
 				7D71FE7E1C7AD95B008F54E7 /* AppDelegate.m */,
+				7D71FEC21C7C2CC5008F54E7 /* Vendors */,
 				7D71FEBA1C7C2A11008F54E7 /* DefaultSearchViewController */,
 				7D71FEBD1C7C2A11008F54E7 /* DefaultSearchViewController(fuzzy) */,
 				7D71FEB21C7AF6FB008F54E7 /* NDSearchModel.h */,
@@ -172,6 +179,25 @@
 				7D71FEBF1C7C2A11008F54E7 /* NDDefaultFuzzySearchViewController.m */,
 			);
 			path = "DefaultSearchViewController(fuzzy)";
+			sourceTree = "<group>";
+		};
+		7D71FEC21C7C2CC5008F54E7 /* Vendors */ = {
+			isa = PBXGroup;
+			children = (
+				7D71FECE1C7C4F45008F54E7 /* LBBlurredImage */,
+			);
+			path = Vendors;
+			sourceTree = "<group>";
+		};
+		7D71FECE1C7C4F45008F54E7 /* LBBlurredImage */ = {
+			isa = PBXGroup;
+			children = (
+				7D71FECF1C7C4F45008F54E7 /* UIImage+ImageEffects.h */,
+				7D71FED01C7C4F45008F54E7 /* UIImage+ImageEffects.m */,
+				7D71FED11C7C4F45008F54E7 /* UIImageView+LBBlurredImage.h */,
+				7D71FED21C7C4F45008F54E7 /* UIImageView+LBBlurredImage.m */,
+			);
+			path = LBBlurredImage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -305,10 +331,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D71FED31C7C4F45008F54E7 /* UIImage+ImageEffects.m in Sources */,
 				7D71FEB71C7AFB7A008F54E7 /* NDSearchTool.m in Sources */,
 				7D71FE7F1C7AD95B008F54E7 /* AppDelegate.m in Sources */,
 				7D71FE7C1C7AD95B008F54E7 /* main.m in Sources */,
 				7D71FEC01C7C2A11008F54E7 /* NDDefaultSearchViewController.m in Sources */,
+				7D71FED41C7C4F45008F54E7 /* UIImageView+LBBlurredImage.m in Sources */,
 				7D71FEB41C7AF6FB008F54E7 /* NDSearchModel.m in Sources */,
 				7D71FEC11C7C2A11008F54E7 /* NDDefaultFuzzySearchViewController.m in Sources */,
 			);

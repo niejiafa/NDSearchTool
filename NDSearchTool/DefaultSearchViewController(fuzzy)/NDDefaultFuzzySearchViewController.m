@@ -9,13 +9,17 @@
 #import "NDDefaultFuzzySearchViewController.h"
 #import "NDSearchModel.h"
 #import "NDSearchTool.h"
+#import "UIImageView+LBBlurredImage.h"
 
 @interface NDDefaultFuzzySearchViewController () <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate>
+
 
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
 
 @property (nonatomic, strong) UISearchBar *searchBar;
 @property (nonatomic, strong) UISearchDisplayController *searchDisplayController;
+@property (nonatomic, strong) UIImageView *fuzzyView;
+
 @property (nonatomic, strong) NSMutableArray *dataSource;
 @property (nonatomic, strong) NSMutableArray *searchDataSource;
 
@@ -26,7 +30,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.searchDataSource = self.dataSource;
+    [self.fuzzyView addSubview:[[UIView alloc] init]];
     self.tableView.tableHeaderView = self.searchBar;
 }
 
@@ -37,7 +41,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (self.tableView == tableView) {
-        return self.searchDataSource.count;
+        return self.dataSource.count;
     }
     
     return self.searchDataSource.count;
@@ -51,7 +55,12 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
     }
     
-    NDSearchModel *model = self.searchDataSource[indexPath.row];
+    NDSearchModel *model;
+    if (self.tableView == tableView) {
+        model = self.dataSource[indexPath.row];
+    } else {
+        model = self.searchDataSource[indexPath.row];
+    }
     
     cell.textLabel.text = [NSString stringWithFormat:@"%@",model.name];
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%@",model.code];
@@ -61,24 +70,50 @@
 
 #pragma mark - UISearchBarDelegate
 
+- (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar
+{
+    self.fuzzyView.hidden = NO;
+    self.searchDisplayController.active = YES;
+    
+    if ([self.view.subviews[3] isKindOfClass:[UIView class]]) {
+        [self.view.subviews[3] addSubview:self.fuzzyView];
+    }
+    
+    return YES;
+}
+
+- (BOOL)searchBarShouldEndEditing:(UISearchBar *)searchBar
+{
+    self.fuzzyView.hidden = YES;
+    
+    return YES;
+}
+
 -(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
     self.searchDataSource = (NSMutableArray *)[[NDSearchTool tool] searchWithFieldArray:@[@"name",@"pingyin",@"code"] inputString:searchText inArray:self.dataSource];
     [self.searchDisplayController.searchResultsTableView reloadData];
 }
 
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    [searchBar resignFirstResponder];
+}
+
 #pragma  mark - UISearchDisplayDelegate
 
 - (void)searchDisplayController:(UISearchDisplayController *)controller willShowSearchResultsTableView:(UITableView *)tableView
 {
-    
-    
+    self.fuzzyView.hidden = YES;
 }
 
 - (void)searchDisplayController:(UISearchDisplayController *)controller willHideSearchResultsTableView:(UITableView *)tableView
 {
-    
+    self.fuzzyView.hidden = NO;
 }
+
+#pragma mark - private
+
 
 #pragma mark - getter and setter
 
@@ -130,4 +165,18 @@
     
     return _searchDisplayController;
 }
+
+- (UIImageView *)fuzzyView
+{
+    if (_fuzzyView) {
+        return _fuzzyView;
+    }
+    
+    _fuzzyView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 64, CGRectGetWidth([UIScreen mainScreen].bounds), CGRectGetHeight([UIScreen mainScreen].bounds) - 64)];
+    
+    [_fuzzyView setViewContext:self.tableView rectInView:self.tableView.frame blurRadius:10 completionBlock:nil];
+    
+    return _fuzzyView;
+}
+
 @end
