@@ -1,5 +1,5 @@
 //
-//  NDSearchViewController.h
+//  NDDefaultSearchViewController.h
 //  NDSearchTool
 //
 //  Created by NDMAC on 16/2/22.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NDSearchViewController : UIViewController
+@interface NDDefaultSearchViewController : UIViewController
 
 @end

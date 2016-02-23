@@ -1,16 +1,16 @@
 //
-//  NDSearchViewController.m
+//  NDDefaultSearchViewController.m
 //  NDSearchTool
 //
 //  Created by NDMAC on 16/2/22.
 //  Copyright © 2016年 NDEducation. All rights reserved.
 //
 
-#import "NDSearchViewController.h"
+#import "NDDefaultSearchViewController.h"
 #import "NDSearchModel.h"
 #import "NDSearchTool.h"
 
-@interface NDSearchViewController () <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate>
+@interface NDDefaultSearchViewController () <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate>
 
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
 
@@ -21,7 +21,7 @@
 
 @end
 
-@implementation NDSearchViewController
+@implementation NDDefaultSearchViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -111,7 +111,7 @@
     }
     
     _searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth([UIScreen mainScreen].bounds), 44)];
-    _searchBar.placeholder = @"通过条件搜索";
+    _searchBar.placeholder = @"您可以通过股票名称，简拼或代码进行查询";
     _searchBar.delegate = self;
     
     return _searchBar;

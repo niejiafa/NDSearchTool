@@ -14,7 +14,7 @@
 		7D71FE8A1C7AD95C008F54E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D71FE881C7AD95C008F54E7 /* LaunchScreen.storyboard */; };
 		7D71FE951C7AD95C008F54E7 /* NDSearchToolTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D71FE941C7AD95C008F54E7 /* NDSearchToolTests.m */; };
 		7D71FEA01C7AD95C008F54E7 /* NDSearchToolUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D71FE9F1C7AD95C008F54E7 /* NDSearchToolUITests.m */; };
-		7D71FEAF1C7AD9DE008F54E7 /* NDSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D71FEAE1C7AD9DE008F54E7 /* NDSearchViewController.m */; };
+		7D71FEAF1C7AD9DE008F54E7 /* NDDefaultSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D71FEAE1C7AD9DE008F54E7 /* NDDefaultSearchViewController.m */; };
 		7D71FEB11C7AF3E2008F54E7 /* stockList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7D71FEB01C7AF3E2008F54E7 /* stockList.plist */; };
 		7D71FEB41C7AF6FB008F54E7 /* NDSearchModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D71FEB31C7AF6FB008F54E7 /* NDSearchModel.m */; };
 		7D71FEB71C7AFB7A008F54E7 /* NDSearchTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D71FEB61C7AFB7A008F54E7 /* NDSearchTool.m */; };
@@ -52,8 +52,8 @@
 		7D71FE9B1C7AD95C008F54E7 /* NDSearchToolUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NDSearchToolUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D71FE9F1C7AD95C008F54E7 /* NDSearchToolUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NDSearchToolUITests.m; sourceTree = "<group>"; };
 		7D71FEA11C7AD95C008F54E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7D71FEAD1C7AD9DE008F54E7 /* NDSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NDSearchViewController.h; sourceTree = "<group>"; };
-		7D71FEAE1C7AD9DE008F54E7 /* NDSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NDSearchViewController.m; sourceTree = "<group>"; };
+		7D71FEAD1C7AD9DE008F54E7 /* NDDefaultSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NDDefaultSearchViewController.h; sourceTree = "<group>"; };
+		7D71FEAE1C7AD9DE008F54E7 /* NDDefaultSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NDDefaultSearchViewController.m; sourceTree = "<group>"; };
 		7D71FEB01C7AF3E2008F54E7 /* stockList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = stockList.plist; sourceTree = "<group>"; };
 		7D71FEB21C7AF6FB008F54E7 /* NDSearchModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NDSearchModel.h; sourceTree = "<group>"; };
 		7D71FEB31C7AF6FB008F54E7 /* NDSearchModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NDSearchModel.m; sourceTree = "<group>"; };
@@ -111,8 +111,8 @@
 			children = (
 				7D71FE7D1C7AD95B008F54E7 /* AppDelegate.h */,
 				7D71FE7E1C7AD95B008F54E7 /* AppDelegate.m */,
-				7D71FEAD1C7AD9DE008F54E7 /* NDSearchViewController.h */,
-				7D71FEAE1C7AD9DE008F54E7 /* NDSearchViewController.m */,
+				7D71FEAD1C7AD9DE008F54E7 /* NDDefaultSearchViewController.h */,
+				7D71FEAE1C7AD9DE008F54E7 /* NDDefaultSearchViewController.m */,
 				7D71FEB21C7AF6FB008F54E7 /* NDSearchModel.h */,
 				7D71FEB31C7AF6FB008F54E7 /* NDSearchModel.m */,
 				7D71FEB51C7AFB7A008F54E7 /* NDSearchTool.h */,
@@ -286,7 +286,7 @@
 			files = (
 				7D71FEB71C7AFB7A008F54E7 /* NDSearchTool.m in Sources */,
 				7D71FE7F1C7AD95B008F54E7 /* AppDelegate.m in Sources */,
-				7D71FEAF1C7AD9DE008F54E7 /* NDSearchViewController.m in Sources */,
+				7D71FEAF1C7AD9DE008F54E7 /* NDDefaultSearchViewController.m in Sources */,
 				7D71FE7C1C7AD95B008F54E7 /* main.m in Sources */,
 				7D71FEB41C7AF6FB008F54E7 /* NDSearchModel.m in Sources */,
 			);
