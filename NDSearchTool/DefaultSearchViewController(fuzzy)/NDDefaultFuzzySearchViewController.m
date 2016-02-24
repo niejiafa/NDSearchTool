@@ -13,12 +13,12 @@
 
 @interface NDDefaultFuzzySearchViewController () <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate>
 
-
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
 
 @property (nonatomic, strong) UISearchBar *searchBar;
 @property (nonatomic, strong) UISearchDisplayController *searchDisplayController;
 @property (nonatomic, strong) UIImageView *fuzzyView;
+@property (nonatomic, strong) UIView *adviceView;
 
 @property (nonatomic, strong) NSMutableArray *dataSource;
 @property (nonatomic, strong) NSMutableArray *searchDataSource;
@@ -30,7 +30,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self.fuzzyView addSubview:[[UIView alloc] init]];
+    [self.fuzzyView addSubview:self.adviceView];
     self.tableView.tableHeaderView = self.searchBar;
 }
 
@@ -72,7 +72,11 @@
 
 - (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar
 {
-    self.fuzzyView.hidden = NO;
+    if ([searchBar.text length]) {
+        self.fuzzyView.hidden = YES;
+    } else {
+        self.fuzzyView.hidden = NO;
+    }
     self.searchDisplayController.active = YES;
     
     if ([self.view.subviews[3] isKindOfClass:[UIView class]]) {
@@ -82,15 +86,14 @@
     return YES;
 }
 
-- (BOOL)searchBarShouldEndEditing:(UISearchBar *)searchBar
-{
-    self.fuzzyView.hidden = YES;
-    
-    return YES;
-}
-
 -(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
+    if ([searchBar.text length]) {
+        self.fuzzyView.hidden = YES;
+    } else {
+        self.fuzzyView.hidden = NO;
+    }
+
     self.searchDataSource = (NSMutableArray *)[[NDSearchTool tool] searchWithFieldArray:@[@"name",@"pingyin",@"code"] inputString:searchText inArray:self.dataSource];
     [self.searchDisplayController.searchResultsTableView reloadData];
 }
@@ -99,21 +102,6 @@
 {
     [searchBar resignFirstResponder];
 }
-
-#pragma  mark - UISearchDisplayDelegate
-
-- (void)searchDisplayController:(UISearchDisplayController *)controller willShowSearchResultsTableView:(UITableView *)tableView
-{
-    self.fuzzyView.hidden = YES;
-}
-
-- (void)searchDisplayController:(UISearchDisplayController *)controller willHideSearchResultsTableView:(UITableView *)tableView
-{
-    self.fuzzyView.hidden = NO;
-}
-
-#pragma mark - private
-
 
 #pragma mark - getter and setter
 
@@ -146,7 +134,6 @@
     }
     
     _searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth([UIScreen mainScreen].bounds), 44)];
-    _searchBar.placeholder = @"您可以通过股票名称，简拼或代码进行查询";
     _searchBar.delegate = self;
     
     return _searchBar;
@@ -177,6 +164,31 @@
     [_fuzzyView setViewContext:self.tableView rectInView:self.tableView.frame blurRadius:10 completionBlock:nil];
     
     return _fuzzyView;
+}
+
+- (UIView *)adviceView
+{
+    if (_adviceView) {
+        return _adviceView;
+    }
+    
+    _adviceView = [[UIView alloc] initWithFrame:CGRectMake(0, 50, CGRectGetWidth([UIScreen mainScreen].bounds), 200)];
+    _adviceView.backgroundColor = [UIColor clearColor];
+    
+    NSInteger space = (CGRectGetWidth([UIScreen mainScreen].bounds) - 3 * 60) / 4;
+    for (NSInteger i = 0; i < 3; i++) {
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(space + i * (60 + space), 0, 60, 60)];
+        [_adviceView addSubview:imageView];
+        imageView.backgroundColor = [UIColor redColor];
+    }
+    
+    UILabel *textLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 60 + 30, CGRectGetWidth([UIScreen mainScreen].bounds), 30)];
+    textLabel.text = @"您可以通过股票名称，简拼或代码进行查询";
+    textLabel.textAlignment = NSTextAlignmentCenter;
+    textLabel.textColor = [UIColor grayColor];
+    [_adviceView addSubview:textLabel];
+    
+    return _adviceView;
 }
 
 @end
