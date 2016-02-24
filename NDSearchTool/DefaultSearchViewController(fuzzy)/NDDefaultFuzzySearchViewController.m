@@ -11,7 +11,7 @@
 #import "NDSearchTool.h"
 #import "UIImageView+LBBlurredImage.h"
 
-@interface NDDefaultFuzzySearchViewController () <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate>
+@interface NDDefaultFuzzySearchViewController () <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
 
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
 
@@ -146,7 +146,6 @@
     }
     
     _searchDisplayController = [[UISearchDisplayController alloc] initWithSearchBar:self.searchBar contentsController:self];
-    _searchDisplayController.delegate = self;
     _searchDisplayController.searchResultsTableView.dataSource = self;
     _searchDisplayController.searchResultsTableView.delegate = self;
     
