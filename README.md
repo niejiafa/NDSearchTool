@@ -46,7 +46,14 @@ inAllArray:(NSArray *)allArray;
 @end
 ```
 
+* Time consuming
 
-* 演示效果
+![image](https://github.com/indexjincieryi/NDSearchTool/blob/master/NDSearchToolUseTime.png)
+
+* Demo show
 
 ![image](https://github.com/indexjincieryi/NDSearchTool/blob/master/NDSearchTool.gif)
+
+# More Info
+
+Have a question? Please [open an issue](https://github.com/indexjincieryi/NDSearchTool/issues)!
