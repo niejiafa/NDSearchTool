@@ -39,9 +39,13 @@ inAllArray:(NSArray *)allArray;
 
 ```objc
 
-[[NDSearchTool tool] searchWithFieldArray:@[@"name",@"pingyin",@"code"] inputString:searchText inArray:self.dataSource];
+[[NDSearchTool tool] searchWithFieldArray:@[@"name",@"pingyin",@"code"]
+inputString:searchText
+inArray:self.dataSource]
 
-[[NDSearchTool tool] searchWithAllFieldArray:@[@[@"name",@"cSpell"],@[@"name",@"cSpell"]]inputString:searchText inAllArray:@[self.usualListDataSource,self.traderListDataSource]];
+[[NDSearchTool tool] searchWithAllFieldArray:@[@[@"name",@"cSpell"],@[@"name",@"cSpell"]]
+inputString:searchText
+inAllArray:@[self.usualListDataSource,self.traderListDataSource]]
 
 @end
 ```

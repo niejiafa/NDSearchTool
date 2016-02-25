@@ -108,7 +108,9 @@
 
 -(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
-    NSMutableArray *resultArray = (NSMutableArray *)[[NDSearchTool tool] searchWithAllFieldArray:@[@[@"name",@"cSpell"],@[@"name",@"cSpell"]]inputString:searchText inAllArray:@[self.usualListDataSource,self.traderListDataSource]];
+    NSMutableArray *resultArray = (NSMutableArray *)[[NDSearchTool tool] searchWithAllFieldArray:@[@[@"name",@"cSpell"],@[@"name",@"cSpell"]]
+                                                                                     inputString:searchText
+                                                                                      inAllArray:@[self.usualListDataSource,self.traderListDataSource]];
     self.usualListSearchDataSource = resultArray[0];
     self.traderListSearchDataSource = resultArray[1];
     self.searchDataSource = [NSMutableArray array];
