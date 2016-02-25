@@ -45,3 +45,8 @@ inAllArray:(NSArray *)allArray;
 
 @end
 ```
+
+
+* 演示效果
+
+![image](https://github.com/indexjincieryi/NDSearchTool/blob/master/NDSearchTool.gif)
