@@ -168,14 +168,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="13f-y2-TcU">
-                                <rect key="frame" x="0.0" y="108" width="600" height="492"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="LdO-eg-Nd1" id="vMd-r2-LDN"/>
-                                    <outlet property="delegate" destination="LdO-eg-Nd1" id="aIt-Hr-rky"/>
-                                </connections>
-                            </tableView>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="BzR-CD-kWb">
                                 <rect key="frame" x="0.0" y="64" width="600" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -183,6 +175,14 @@
                                     <outlet property="delegate" destination="LdO-eg-Nd1" id="bzf-B5-bS6"/>
                                 </connections>
                             </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="13f-y2-TcU">
+                                <rect key="frame" x="0.0" y="108" width="600" height="492"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="LdO-eg-Nd1" id="vMd-r2-LDN"/>
+                                    <outlet property="delegate" destination="LdO-eg-Nd1" id="aIt-Hr-rky"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -190,10 +190,20 @@
                             <constraint firstAttribute="trailingMargin" secondItem="BzR-CD-kWb" secondAttribute="trailing" constant="-20" id="0Jv-N6-Q30"/>
                             <constraint firstItem="ndz-dk-98n" firstAttribute="top" secondItem="13f-y2-TcU" secondAttribute="bottom" id="14e-q5-v2h"/>
                             <constraint firstItem="13f-y2-TcU" firstAttribute="top" secondItem="BzR-CD-kWb" secondAttribute="bottom" id="AnN-Lp-L3Y"/>
+                            <constraint firstItem="13f-y2-TcU" firstAttribute="top" secondItem="uHC-kX-9qC" secondAttribute="bottom" constant="44" id="ErZ-h8-IZk"/>
                             <constraint firstAttribute="trailingMargin" secondItem="13f-y2-TcU" secondAttribute="trailing" constant="-20" id="JPa-Yn-Bz6"/>
                             <constraint firstItem="13f-y2-TcU" firstAttribute="leading" secondItem="h04-Dx-wMq" secondAttribute="leadingMargin" constant="-20" id="TyP-Su-Y4Z"/>
+                            <constraint firstItem="13f-y2-TcU" firstAttribute="top" secondItem="h04-Dx-wMq" secondAttribute="topMargin" constant="108" id="kBj-m7-kdk"/>
+                            <constraint firstItem="13f-y2-TcU" firstAttribute="top" secondItem="BzR-CD-kWb" secondAttribute="bottom" id="qFd-lS-fDU"/>
                             <constraint firstItem="BzR-CD-kWb" firstAttribute="leading" secondItem="h04-Dx-wMq" secondAttribute="leadingMargin" constant="-20" id="tfp-cz-qk6"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="AnN-Lp-L3Y"/>
+                                <exclude reference="ErZ-h8-IZk"/>
+                                <exclude reference="kBj-m7-kdk"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="分组搜索" id="3Vw-Lk-TGx"/>
                     <connections>

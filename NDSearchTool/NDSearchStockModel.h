@@ -1,5 +1,5 @@
 //
-//  NDSearchModel.h
+//  NDSearchStockModel.h
 //  NDSearchTool
 //
 //  Created by NDMAC on 16/2/22.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NDSearchModel : NSObject
+@interface NDSearchStockModel : NSObject
 
 @property (nonatomic, copy) NSString *pingyin;
 @property (nonatomic, copy) NSString *code;

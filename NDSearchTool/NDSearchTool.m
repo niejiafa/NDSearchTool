@@ -41,4 +41,24 @@
     return backArray;
 }
 
+- (NSArray *)searchWithAllFieldArray:(NSArray *)allFieldArray
+                         inputString:(NSString *)inputString
+                          inAllArray:(NSArray *)allArray
+{
+    NSInteger count = allArray.count;
+    
+    if (allFieldArray.count != allArray.count || 0 == count) {
+        return nil;
+    }
+    
+    NSMutableArray *backArray  = [NSMutableArray array];
+    
+    for (NSInteger i = 0; i < count; i++) {
+        NSArray *tempArray = [self searchWithFieldArray:allFieldArray[i] inputString:inputString inArray:allArray[i]];
+        [backArray addObject:tempArray];
+    }
+    
+    return backArray;
+}
+
 @end

@@ -30,4 +30,17 @@
                       inputString:(NSString *)inputString
                           inArray:(NSArray *)array;
 
+/**
+ *  <#Description#>
+ *
+ *  @param allFieldArray <#allFieldArray description#>
+ *  @param inputString   <#inputString description#>
+ *  @param allArray      <#allArray description#>
+ *
+ *  @return <#return value description#>
+ */
+- (NSArray *)searchWithAllFieldArray:(NSArray *)allFieldArray
+                         inputString:(NSString *)inputString
+                          inAllArray:(NSArray *)allArray;
+
 @end

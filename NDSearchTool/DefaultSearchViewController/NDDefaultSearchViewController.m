@@ -7,7 +7,8 @@
 //
 
 #import "NDDefaultSearchViewController.h"
-#import "NDSearchModel.h"
+
+#import "NDSearchStockModel.h"
 #import "NDSearchTool.h"
 
 @interface NDDefaultSearchViewController () <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
@@ -50,7 +51,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
     }
     
-    NDSearchModel *model;
+    NDSearchStockModel *model;
     if (self.tableView == tableView) {
         model = self.dataSource[indexPath.row];
     } else {
@@ -85,7 +86,7 @@
     NSArray *fileArray = [NSArray arrayWithContentsOfFile:path];
     
     for (NSDictionary *dict in fileArray) {
-        NDSearchModel *model = [[NDSearchModel alloc] init];
+        NDSearchStockModel *model = [[NDSearchStockModel alloc] init];
         model.name = dict[@"name"];
         model.pingyin = dict[@"pingyin"];
         model.code = dict[@"code"];
