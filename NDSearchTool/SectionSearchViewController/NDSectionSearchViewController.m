@@ -21,9 +21,8 @@
 @property (nonatomic, strong) NSArray *usualListSearchDataSource;
 @property (nonatomic, strong) NSArray *traderListSearchDataSource;
 @property (nonatomic, strong) NSMutableArray *groupTitleArray;
-@property (nonatomic, strong) NSMutableArray *searchGroupTitleArray;
 @property (nonatomic, strong) NSMutableDictionary *filterDictionary;
-@property (nonatomic, strong) NSMutableDictionary *searchFilterDictionary;
+@property (nonatomic, strong) NSMutableArray *searchDataSource;
 
 @end
 
@@ -44,7 +43,7 @@
     if (self.tableView == tableView) {
         return self.groupTitleArray.count;
     }
-    return self.searchGroupTitleArray.count;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -52,7 +51,7 @@
     if (self.tableView == tableView) {
         return [self.filterDictionary[self.groupTitleArray[section]] count];
     }
-    return [self.searchFilterDictionary[self.searchGroupTitleArray[section]] count];
+    return [self.searchDataSource count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -67,7 +66,7 @@
     if (self.tableView == tableView) {
         model = self.filterDictionary[self.groupTitleArray[indexPath.section]][indexPath.row];
     } else {
-        model = self.searchFilterDictionary[self.searchGroupTitleArray[indexPath.section]][indexPath.row];
+        model = self.searchDataSource[indexPath.row];
     }
     cell.textLabel.text = [NSString stringWithFormat:@"%@",model.name];
     
@@ -79,7 +78,7 @@
     if (self.tableView == tableView) {
         return self.groupTitleArray;
     }
-    return self.searchGroupTitleArray;
+    return nil;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
@@ -87,16 +86,21 @@
     if (self.tableView == tableView) {
         return self.groupTitleArray[section];
     }
-    return self.searchGroupTitleArray[section];
+    return nil;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 30.f;
+    if (self.tableView == tableView) {
+        return 30.f;
+    }
+    return 5.f;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
+    if (self.tableView == tableView) {
+    }
     return 0.1f;
 }
 
@@ -107,32 +111,19 @@
     NSMutableArray *resultArray = (NSMutableArray *)[[NDSearchTool tool] searchWithAllFieldArray:@[@[@"name",@"cSpell"],@[@"name",@"cSpell"]]inputString:searchText inAllArray:@[self.usualListDataSource,self.traderListDataSource]];
     self.usualListSearchDataSource = resultArray[0];
     self.traderListSearchDataSource = resultArray[1];
-    self.searchGroupTitleArray = [NSMutableArray array];
-    self.searchFilterDictionary = [NSMutableDictionary dictionary];
-    [self nd_getSearchIndexLetter];
+    self.searchDataSource = [NSMutableArray array];
+    for (NDSearchStockCompanyModel *model in self.usualListSearchDataSource) {
+        [self.searchDataSource addObject:model];
+    }
+    for (NDSearchStockCompanyModel *model in self.traderListSearchDataSource) {
+        [self.searchDataSource addObject:model];
+    }
+    
     [self.searchDisplayController.searchResultsTableView reloadData];
 }
 
 
 #pragma mark - private
-
-- (void)nd_getSearchIndexLetter
-{
-    for (NSString *aleph in [NSArray arrayWithObjects: @"A", @"B", @"C", @"D", @"E", @"F", @"G", @"H", @"I", @"J", @"K", @"L", @"M", @"N", @"O", @"P", @"Q", @"R", @"S", @"T", @"U", @"V", @"W", @"X", @"Y", @"Z", nil]) {
-        NSPredicate *alephPredicate = [NSPredicate predicateWithFormat:@"%K BEGINSWITH[cd] %@",@"cSpell",aleph];
-        NSArray *tempArray = [self.traderListSearchDataSource filteredArrayUsingPredicate:alephPredicate];
-        
-        if (tempArray.count > 0) {
-            self.searchFilterDictionary[aleph] = tempArray;
-        }
-    }
-    
-    [self.searchGroupTitleArray addObjectsFromArray:[self.searchFilterDictionary.allKeys sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)]];
-    if (self.usualListSearchDataSource.count > 0) {
-        [self.searchGroupTitleArray insertObject:@"常用" atIndex:0];
-    }
-    self.searchFilterDictionary[@"常用"] = self.usualListSearchDataSource;
-}
 
 - (void)nd_getIndexLetter
 {

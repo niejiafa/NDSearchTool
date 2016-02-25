@@ -31,13 +31,13 @@
                           inArray:(NSArray *)array;
 
 /**
- *  <#Description#>
+ *  分组搜索
  *
- *  @param allFieldArray <#allFieldArray description#>
- *  @param inputString   <#inputString description#>
- *  @param allArray      <#allArray description#>
+ *  @param allFieldArray  字段数组集合
+ *  @param inputString 输入文字
+ *  @param allArray  搜索数组集合
  *
- *  @return <#return value description#>
+ *  @return 搜索结果
  */
 - (NSArray *)searchWithAllFieldArray:(NSArray *)allFieldArray
                          inputString:(NSString *)inputString

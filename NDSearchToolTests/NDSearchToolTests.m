@@ -8,7 +8,12 @@
 
 #import <XCTest/XCTest.h>
 
+#import "NDSearchStockModel.h"
+#import "NDSearchTool.h"
+
 @interface NDSearchToolTests : XCTestCase
+
+@property (nonatomic, strong) NSMutableArray *allFieldArray;
 
 @end
 
@@ -16,23 +21,24 @@
 
 - (void)setUp {
     [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
+    self.allFieldArray = [NSMutableArray array];
+    for (NSInteger i = 0; i < 10000; i++) {
+        NDSearchStockModel *fieldModel = [[NDSearchStockModel alloc] init];
+        fieldModel.pingyin = [NSString stringWithFormat:@"FieldModelPingYin%ld",i];
+        fieldModel.code = [NSString stringWithFormat:@"FieldModelStockCode%ld",i];
+        [self.allFieldArray addObject:fieldModel];
+    }
 }
 
 - (void)tearDown {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
+    self.allFieldArray = nil;
     [super tearDown];
 }
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
-}
-
-- (void)testPerformanceExample {
+- (void)testSearchTime {
     // This is an example of a performance test case.
     [self measureBlock:^{
-        // Put the code you want to measure the time of here.
+        [[NDSearchTool tool] searchWithFieldArray:@[@"pingyin",@"code"] inputString:@"FieldModelPingYin5000" inArray:self.allFieldArray];
     }];
 }
 
