@@ -50,11 +50,11 @@ inAllArray:@[self.usualListDataSource,self.traderListDataSource]]
 @end
 ```
 
-* Time consuming
+* Time Consuming
 
 ![image](https://github.com/indexjincieryi/NDSearchTool/blob/master/NDSearchToolUseTime.png)
 
-* Demo show
+* Demo Show
 
 ![image](https://github.com/indexjincieryi/NDSearchTool/blob/master/NDSearchTool.gif)
 
