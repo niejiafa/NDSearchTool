@@ -32,7 +32,6 @@ inArray:(NSArray *)array;
 inputString:(NSString *)inputString
 inAllArray:(NSArray *)allArray;
 
-@end
 ```
 
 * Use Example
@@ -47,7 +46,6 @@ inArray:self.dataSource]
 inputString:searchText
 inAllArray:@[self.usualListDataSource,self.traderListDataSource]]
 
-@end
 ```
 
 * Time Consuming
