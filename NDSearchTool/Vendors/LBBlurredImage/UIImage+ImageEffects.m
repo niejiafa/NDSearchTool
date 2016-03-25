@@ -127,7 +127,10 @@
 {
     const CGFloat EffectColorAlpha = 0.6;
     UIColor *effectColor = tintColor;
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wshorten-64-to-32"
     int componentCount = CGColorGetNumberOfComponents(tintColor.CGColor);
+#pragma clang diagnostic pop
     if (componentCount == 2) {
         CGFloat b;
         if ([tintColor getWhite:&b alpha:NULL]) {
@@ -204,9 +207,13 @@
             if (radius % 2 != 1) {
                 radius += 1; // force radius to be odd so that the three box-blur methodology works.
             }
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wshorten-64-to-32"
             vImageBoxConvolve_ARGB8888(&effectInBuffer, &effectOutBuffer, NULL, 0, 0, radius, radius, 0, kvImageEdgeExtend);
             vImageBoxConvolve_ARGB8888(&effectOutBuffer, &effectInBuffer, NULL, 0, 0, radius, radius, 0, kvImageEdgeExtend);
             vImageBoxConvolve_ARGB8888(&effectInBuffer, &effectOutBuffer, NULL, 0, 0, radius, radius, 0, kvImageEdgeExtend);
+#pragma clang diagnostic pop
+            
         }
         BOOL effectImageBuffersAreSwapped = NO;
         if (hasSaturationChange) {

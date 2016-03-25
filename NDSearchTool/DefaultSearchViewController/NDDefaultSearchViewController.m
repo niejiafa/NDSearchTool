@@ -16,7 +16,10 @@
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
 
 @property (nonatomic, strong) UISearchBar *searchBar;
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
 @property (nonatomic, strong) UISearchDisplayController *searchDisplayController;
+#pragma clang diagnostic pop
 @property (nonatomic, strong) NSMutableArray *dataSource;
 @property (nonatomic, strong) NSMutableArray *searchDataSource;
 

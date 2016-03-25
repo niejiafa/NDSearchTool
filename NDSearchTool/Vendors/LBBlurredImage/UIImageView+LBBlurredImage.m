@@ -56,7 +56,9 @@ CGFloat const kLBBlurredImageDefaultSaturationDeltaFactor = 1.8;
     CGRect tempRect = CGRectMake(rect.origin.x, rect.origin.y + 144, rect.size.width, rect.size.height);
 
     CGImageRef imageRef = CGImageCreateWithImageInRect(image.CGImage, tempRect);
-    UIImage *resultImage = [UIImage imageWithCGImage:imageRef scale:2.0 orientation:UIImageOrientationUp];
+    
+    __unused UIImage *resultImage = [UIImage imageWithCGImage:imageRef scale:2.0 orientation:UIImageOrientationUp];
+    
     CGImageRelease(imageRef);
     //    self.image = resultImage;
     [self setImageToBlur:image blurRadius:blurRadius completionBlock:completion];

@@ -120,8 +120,11 @@
     for (NDSearchStockCompanyModel *model in self.traderListSearchDataSource) {
         [self.searchDataSource addObject:model];
     }
-    
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
     [self.searchDisplayController.searchResultsTableView reloadData];
+#pragma clang diagnostic pop
+
 }
 
 

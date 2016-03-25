@@ -19,8 +19,6 @@
 		7D71FEC11C7C2A11008F54E7 /* NDDefaultFuzzySearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D71FEBF1C7C2A11008F54E7 /* NDDefaultFuzzySearchViewController.m */; };
 		7D71FED31C7C4F45008F54E7 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D71FED01C7C4F45008F54E7 /* UIImage+ImageEffects.m */; };
 		7D71FED41C7C4F45008F54E7 /* UIImageView+LBBlurredImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D71FED21C7C4F45008F54E7 /* UIImageView+LBBlurredImage.m */; };
-		7D8952711C8EBA95003F2ECD /* NDCustomSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D8952701C8EBA95003F2ECD /* NDCustomSearchViewController.m */; };
-		7DFD2B891C8EA35500461770 /* NDCustomDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DFD2B881C8EA35500461770 /* NDCustomDemoViewController.m */; };
 		7DFED3431C7D5C4F0050869C /* NDSectionSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DFED3421C7D5C4F0050869C /* NDSectionSearchViewController.m */; };
 		7DFED3451C7E93AD0050869C /* stockComany.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7DFED3441C7E93AD0050869C /* stockComany.plist */; };
 		7DFED3511C7EE1860050869C /* NDSearchStockCompanyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DFED34B1C7EE1860050869C /* NDSearchStockCompanyModel.m */; };
@@ -69,10 +67,6 @@
 		7D71FED01C7C4F45008F54E7 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 		7D71FED11C7C4F45008F54E7 /* UIImageView+LBBlurredImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+LBBlurredImage.h"; sourceTree = "<group>"; };
 		7D71FED21C7C4F45008F54E7 /* UIImageView+LBBlurredImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+LBBlurredImage.m"; sourceTree = "<group>"; };
-		7D89526F1C8EBA95003F2ECD /* NDCustomSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NDCustomSearchViewController.h; sourceTree = "<group>"; };
-		7D8952701C8EBA95003F2ECD /* NDCustomSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NDCustomSearchViewController.m; sourceTree = "<group>"; };
-		7DFD2B871C8EA35500461770 /* NDCustomDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NDCustomDemoViewController.h; sourceTree = "<group>"; };
-		7DFD2B881C8EA35500461770 /* NDCustomDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NDCustomDemoViewController.m; sourceTree = "<group>"; };
 		7DFED3411C7D5C4F0050869C /* NDSectionSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NDSectionSearchViewController.h; sourceTree = "<group>"; };
 		7DFED3421C7D5C4F0050869C /* NDSectionSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NDSectionSearchViewController.m; sourceTree = "<group>"; };
 		7DFED3441C7E93AD0050869C /* stockComany.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = stockComany.plist; sourceTree = "<group>"; };
@@ -140,7 +134,6 @@
 				7D71FEBA1C7C2A11008F54E7 /* DefaultSearchViewController */,
 				7D71FEBD1C7C2A11008F54E7 /* DefaultSearchViewController(fuzzy) */,
 				7DFED3401C7D5C300050869C /* SectionSearchViewController */,
-				7DFD2B861C8EA33900461770 /* CustomSearchViewController */,
 				7D71FEB01C7AF3E2008F54E7 /* stockList.plist */,
 				7DFED3441C7E93AD0050869C /* stockComany.plist */,
 				7D71FE831C7AD95B008F54E7 /* Main.storyboard */,
@@ -213,17 +206,6 @@
 				7D71FED21C7C4F45008F54E7 /* UIImageView+LBBlurredImage.m */,
 			);
 			path = LBBlurredImage;
-			sourceTree = "<group>";
-		};
-		7DFD2B861C8EA33900461770 /* CustomSearchViewController */ = {
-			isa = PBXGroup;
-			children = (
-				7DFD2B871C8EA35500461770 /* NDCustomDemoViewController.h */,
-				7DFD2B881C8EA35500461770 /* NDCustomDemoViewController.m */,
-				7D89526F1C8EBA95003F2ECD /* NDCustomSearchViewController.h */,
-				7D8952701C8EBA95003F2ECD /* NDCustomSearchViewController.m */,
-			);
-			path = CustomSearchViewController;
 			sourceTree = "<group>";
 		};
 		7DFED3401C7D5C300050869C /* SectionSearchViewController */ = {
@@ -389,10 +371,8 @@
 			files = (
 				7D71FED31C7C4F45008F54E7 /* UIImage+ImageEffects.m in Sources */,
 				7D71FE7F1C7AD95B008F54E7 /* AppDelegate.m in Sources */,
-				7D8952711C8EBA95003F2ECD /* NDCustomSearchViewController.m in Sources */,
 				7DFED3511C7EE1860050869C /* NDSearchStockCompanyModel.m in Sources */,
 				7D71FE7C1C7AD95B008F54E7 /* main.m in Sources */,
-				7DFD2B891C8EA35500461770 /* NDCustomDemoViewController.m in Sources */,
 				7D71FEC01C7C2A11008F54E7 /* NDDefaultSearchViewController.m in Sources */,
 				7DFED3531C7EE1860050869C /* NDSearchTool.m in Sources */,
 				7DFED3431C7D5C4F0050869C /* NDSectionSearchViewController.m in Sources */,
