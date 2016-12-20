@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D2F32CC1E092580007D8480 /* NSArray+ND.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D2F32BB1E092580007D8480 /* NSArray+ND.m */; };
+		7D2F32CD1E092580007D8480 /* NSData+ND.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D2F32BD1E092580007D8480 /* NSData+ND.m */; };
+		7D2F32CE1E092580007D8480 /* NSDate+ND.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D2F32BF1E092580007D8480 /* NSDate+ND.m */; };
+		7D2F32CF1E092580007D8480 /* NSDictionary+ND.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D2F32C11E092580007D8480 /* NSDictionary+ND.m */; };
+		7D2F32D01E092580007D8480 /* NSFileManager+ND.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D2F32C31E092580007D8480 /* NSFileManager+ND.m */; };
+		7D2F32D11E092580007D8480 /* NSMutableArray+ND.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D2F32C51E092580007D8480 /* NSMutableArray+ND.m */; };
+		7D2F32D21E092580007D8480 /* NSMutableDictionary+ND.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D2F32C71E092580007D8480 /* NSMutableDictionary+ND.m */; };
+		7D2F32D31E092580007D8480 /* NSString+ND.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D2F32C91E092580007D8480 /* NSString+ND.m */; };
+		7D2F32D41E092580007D8480 /* NSTimer+ND.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D2F32CB1E092580007D8480 /* NSTimer+ND.m */; };
 		7D71FE7C1C7AD95B008F54E7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D71FE7B1C7AD95B008F54E7 /* main.m */; };
 		7D71FE7F1C7AD95B008F54E7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D71FE7E1C7AD95B008F54E7 /* AppDelegate.m */; };
 		7D71FE851C7AD95B008F54E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D71FE831C7AD95B008F54E7 /* Main.storyboard */; };
@@ -44,6 +53,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7D2F32BA1E092580007D8480 /* NSArray+ND.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+ND.h"; sourceTree = "<group>"; };
+		7D2F32BB1E092580007D8480 /* NSArray+ND.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+ND.m"; sourceTree = "<group>"; };
+		7D2F32BC1E092580007D8480 /* NSData+ND.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+ND.h"; sourceTree = "<group>"; };
+		7D2F32BD1E092580007D8480 /* NSData+ND.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+ND.m"; sourceTree = "<group>"; };
+		7D2F32BE1E092580007D8480 /* NSDate+ND.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+ND.h"; sourceTree = "<group>"; };
+		7D2F32BF1E092580007D8480 /* NSDate+ND.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ND.m"; sourceTree = "<group>"; };
+		7D2F32C01E092580007D8480 /* NSDictionary+ND.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+ND.h"; sourceTree = "<group>"; };
+		7D2F32C11E092580007D8480 /* NSDictionary+ND.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+ND.m"; sourceTree = "<group>"; };
+		7D2F32C21E092580007D8480 /* NSFileManager+ND.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+ND.h"; sourceTree = "<group>"; };
+		7D2F32C31E092580007D8480 /* NSFileManager+ND.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+ND.m"; sourceTree = "<group>"; };
+		7D2F32C41E092580007D8480 /* NSMutableArray+ND.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+ND.h"; sourceTree = "<group>"; };
+		7D2F32C51E092580007D8480 /* NSMutableArray+ND.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+ND.m"; sourceTree = "<group>"; };
+		7D2F32C61E092580007D8480 /* NSMutableDictionary+ND.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+ND.h"; sourceTree = "<group>"; };
+		7D2F32C71E092580007D8480 /* NSMutableDictionary+ND.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+ND.m"; sourceTree = "<group>"; };
+		7D2F32C81E092580007D8480 /* NSString+ND.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ND.h"; sourceTree = "<group>"; };
+		7D2F32C91E092580007D8480 /* NSString+ND.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ND.m"; sourceTree = "<group>"; };
+		7D2F32CA1E092580007D8480 /* NSTimer+ND.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+ND.h"; sourceTree = "<group>"; };
+		7D2F32CB1E092580007D8480 /* NSTimer+ND.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+ND.m"; sourceTree = "<group>"; };
 		7D71FE771C7AD95B008F54E7 /* NDSearchTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NDSearchTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D71FE7B1C7AD95B008F54E7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7D71FE7D1C7AD95B008F54E7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -103,6 +130,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7D2F32B91E092580007D8480 /* SystemCategory */ = {
+			isa = PBXGroup;
+			children = (
+				7D2F32BA1E092580007D8480 /* NSArray+ND.h */,
+				7D2F32BB1E092580007D8480 /* NSArray+ND.m */,
+				7D2F32BC1E092580007D8480 /* NSData+ND.h */,
+				7D2F32BD1E092580007D8480 /* NSData+ND.m */,
+				7D2F32BE1E092580007D8480 /* NSDate+ND.h */,
+				7D2F32BF1E092580007D8480 /* NSDate+ND.m */,
+				7D2F32C01E092580007D8480 /* NSDictionary+ND.h */,
+				7D2F32C11E092580007D8480 /* NSDictionary+ND.m */,
+				7D2F32C21E092580007D8480 /* NSFileManager+ND.h */,
+				7D2F32C31E092580007D8480 /* NSFileManager+ND.m */,
+				7D2F32C41E092580007D8480 /* NSMutableArray+ND.h */,
+				7D2F32C51E092580007D8480 /* NSMutableArray+ND.m */,
+				7D2F32C61E092580007D8480 /* NSMutableDictionary+ND.h */,
+				7D2F32C71E092580007D8480 /* NSMutableDictionary+ND.m */,
+				7D2F32C81E092580007D8480 /* NSString+ND.h */,
+				7D2F32C91E092580007D8480 /* NSString+ND.m */,
+				7D2F32CA1E092580007D8480 /* NSTimer+ND.h */,
+				7D2F32CB1E092580007D8480 /* NSTimer+ND.m */,
+			);
+			path = SystemCategory;
+			sourceTree = "<group>";
+		};
 		7D71FE6E1C7AD95B008F54E7 = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +186,7 @@
 				7D71FEBA1C7C2A11008F54E7 /* DefaultSearchViewController */,
 				7D71FEBD1C7C2A11008F54E7 /* DefaultSearchViewController(fuzzy) */,
 				7DFED3401C7D5C300050869C /* SectionSearchViewController */,
+				7D2F32B91E092580007D8480 /* SystemCategory */,
 				7D71FEB01C7AF3E2008F54E7 /* stockList.plist */,
 				7DFED3441C7E93AD0050869C /* stockComany.plist */,
 				7D71FE831C7AD95B008F54E7 /* Main.storyboard */,
@@ -369,15 +422,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D2F32CF1E092580007D8480 /* NSDictionary+ND.m in Sources */,
+				7D2F32D31E092580007D8480 /* NSString+ND.m in Sources */,
+				7D2F32CE1E092580007D8480 /* NSDate+ND.m in Sources */,
 				7D71FED31C7C4F45008F54E7 /* UIImage+ImageEffects.m in Sources */,
 				7D71FE7F1C7AD95B008F54E7 /* AppDelegate.m in Sources */,
 				7DFED3511C7EE1860050869C /* NDSearchStockCompanyModel.m in Sources */,
+				7D2F32D11E092580007D8480 /* NSMutableArray+ND.m in Sources */,
 				7D71FE7C1C7AD95B008F54E7 /* main.m in Sources */,
+				7D2F32CC1E092580007D8480 /* NSArray+ND.m in Sources */,
 				7D71FEC01C7C2A11008F54E7 /* NDDefaultSearchViewController.m in Sources */,
 				7DFED3531C7EE1860050869C /* NDSearchTool.m in Sources */,
 				7DFED3431C7D5C4F0050869C /* NDSectionSearchViewController.m in Sources */,
 				7D71FED41C7C4F45008F54E7 /* UIImageView+LBBlurredImage.m in Sources */,
+				7D2F32D41E092580007D8480 /* NSTimer+ND.m in Sources */,
 				7D71FEC11C7C2A11008F54E7 /* NDDefaultFuzzySearchViewController.m in Sources */,
+				7D2F32D21E092580007D8480 /* NSMutableDictionary+ND.m in Sources */,
+				7D2F32D01E092580007D8480 /* NSFileManager+ND.m in Sources */,
+				7D2F32CD1E092580007D8480 /* NSData+ND.m in Sources */,
 				7DFED3521C7EE1860050869C /* NDSearchStockModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

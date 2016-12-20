@@ -8,6 +8,8 @@
 
 #import "NDSearchTool.h"
 
+#import "NSMutableArray+ND.h"
+
 @implementation NDSearchTool
 
 + (NDSearchTool *)tool
@@ -33,7 +35,7 @@
         tempArray = [array filteredArrayUsingPredicate:scopePredicate];
         for (NSObject *object in tempArray) {
             if (![backArray containsObject:object]) {
-                [backArray addObject:object];
+                [backArray nd_addObj:object];
             }
         }
     }
@@ -55,7 +57,7 @@
     
     for (NSInteger i = 0; i < count; i++) {
         NSArray *tempArray = [self searchWithFieldArray:allFieldArray[i] inputString:inputString inArray:allArray[i]];
-        [backArray addObject:tempArray];
+        [backArray nd_addObj:tempArray];
     }
     
     return backArray;
