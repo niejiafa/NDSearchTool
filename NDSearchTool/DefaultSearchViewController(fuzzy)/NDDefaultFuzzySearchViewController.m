@@ -31,9 +31,10 @@
 
 @implementation NDDefaultFuzzySearchViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
     [self.fuzzyView addSubview:self.adviceView];
     self.tableView.tableHeaderView = self.searchBar;
 }
@@ -44,7 +45,8 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (self.tableView == tableView) {
+    if (self.tableView == tableView)
+    {
         return self.dataSource.count;
     }
     
@@ -55,14 +57,18 @@
 {
     static NSString *ID = @"cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-    if (!cell) {
+    if (!cell)
+    {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
     }
     
     NDSearchStockModel *model;
-    if (self.tableView == tableView) {
+    if (self.tableView == tableView)
+    {
         model = self.dataSource[indexPath.row];
-    } else {
+    }
+    else
+    {
         model = self.searchDataSource[indexPath.row];
     }
     
@@ -76,14 +82,19 @@
 
 - (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar
 {
-    if ([searchBar.text length]) {
+    if ([searchBar.text length])
+    {
         self.fuzzyView.hidden = YES;
-    } else {
+    }
+    else
+    {
         self.fuzzyView.hidden = NO;
     }
+    
     self.searchDisplayController.active = YES;
     
-    if ([self.view.subviews[3] isKindOfClass:[UIView class]]) {
+    if ([self.view.subviews[3] isKindOfClass:[UIView class]])
+    {
         [self.view.subviews[3] addSubview:self.fuzzyView];
     }
     
@@ -92,13 +103,17 @@
 
 -(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
-    if ([searchBar.text length]) {
+    if ([searchBar.text length])
+    {
         self.fuzzyView.hidden = YES;
-    } else {
+    }
+    else
+    {
         self.fuzzyView.hidden = NO;
     }
 
     self.searchDataSource = (NSMutableArray *)[[NDSearchTool tool] searchWithFieldArray:@[@"name",@"pingyin",@"code"] inputString:searchText inArray:self.dataSource];
+    
     [self.searchDisplayController.searchResultsTableView reloadData];
 }
 
@@ -111,7 +126,8 @@
 
 - (NSMutableArray *)dataSource
 {
-    if (_dataSource) {
+    if (_dataSource)
+    {
         return _dataSource;
     }
     
@@ -120,7 +136,8 @@
     NSString *path = [[NSBundle mainBundle] pathForResource:@"stockList" ofType:@"plist"];
     NSArray *fileArray = [NSArray arrayWithContentsOfFile:path];
     
-    for (NSDictionary *dict in fileArray) {
+    for (NSDictionary *dict in fileArray)
+    {
         NDSearchStockModel *model = [[NDSearchStockModel alloc] init];
         model.name = dict[@"name"];
         model.pingyin = dict[@"pingyin"];
@@ -133,7 +150,8 @@
 
 - (UISearchBar *)searchBar
 {
-    if (_searchBar) {
+    if (_searchBar)
+    {
         return _searchBar;
     }
     
@@ -145,7 +163,8 @@
 
 - (UISearchDisplayController *)searchDisplayController
 {
-    if (_searchDisplayController) {
+    if (_searchDisplayController)
+    {
         return _searchDisplayController;
     }
     
@@ -158,7 +177,8 @@
 
 - (UIImageView *)fuzzyView
 {
-    if (_fuzzyView) {
+    if (_fuzzyView)
+    {
         return _fuzzyView;
     }
     
@@ -171,7 +191,8 @@
 
 - (UIView *)adviceView
 {
-    if (_adviceView) {
+    if (_adviceView)
+    {
         return _adviceView;
     }
     

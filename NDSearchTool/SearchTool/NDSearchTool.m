@@ -22,19 +22,23 @@
                       inputString:(NSString *)inputString
                           inArray:(NSArray *)array
 {
-    if (![array count] || ![fieldArray count]) {
+    if (![array count] || ![fieldArray count])
+    {
         return nil;
     }
     
     NSPredicate *scopePredicate;
     NSMutableArray *backArray = [NSMutableArray array];
     
-    for (NSString *fieldString in fieldArray) {
+    for (NSString *fieldString in fieldArray)
+    {
         NSArray *tempArray = [NSArray array];
         scopePredicate = [NSPredicate predicateWithFormat:@"SELF.%@ contains[c] %@", fieldString, inputString];
         tempArray = [array filteredArrayUsingPredicate:scopePredicate];
-        for (NSObject *object in tempArray) {
-            if (![backArray containsObject:object]) {
+        for (NSObject *object in tempArray)
+        {
+            if (![backArray containsObject:object])
+            {
                 [backArray nd_addObj:object];
             }
         }
@@ -49,13 +53,15 @@
 {
     NSInteger count = allArray.count;
     
-    if (allFieldArray.count != allArray.count || 0 == count) {
+    if (allFieldArray.count != allArray.count || 0 == count)
+    {
         return nil;
     }
     
     NSMutableArray *backArray  = [NSMutableArray array];
     
-    for (NSInteger i = 0; i < count; i++) {
+    for (NSInteger i = 0; i < count; i++)
+    {
         NSArray *tempArray = [self searchWithFieldArray:allFieldArray[i] inputString:inputString inArray:allArray[i]];
         [backArray nd_addObj:tempArray];
     }

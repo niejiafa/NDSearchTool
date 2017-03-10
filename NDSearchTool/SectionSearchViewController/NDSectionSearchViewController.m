@@ -30,6 +30,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     [self nd_getIndexLetter];
     self.tableView.sectionIndexBackgroundColor=[UIColor clearColor];
     self.tableView.sectionIndexColor = [UIColor grayColor];
@@ -40,34 +41,43 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    if (self.tableView == tableView) {
+    if (self.tableView == tableView)
+    {
         return self.groupTitleArray.count;
     }
+    
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (self.tableView == tableView) {
+    if (self.tableView == tableView)
+    {
         return [self.filterDictionary[self.groupTitleArray[section]] count];
     }
+    
     return [self.searchDataSource count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *ID = @"cell";
+    static NSString *ID = @"cellId";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-    if (!cell) {
+    if (!cell)
+    {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
     }
     
     NDSearchStockCompanyModel *model;
-    if (self.tableView == tableView) {
+    if (self.tableView == tableView)
+    {
         model = self.filterDictionary[self.groupTitleArray[indexPath.section]][indexPath.row];
-    } else {
+    }
+    else
+    {
         model = self.searchDataSource[indexPath.row];
     }
+    
     cell.textLabel.text = [NSString stringWithFormat:@"%@",model.name];
     
     return cell;
@@ -75,32 +85,40 @@
 
 - (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
 {
-    if (self.tableView == tableView) {
+    if (self.tableView == tableView)
+    {
         return self.groupTitleArray;
     }
+    
     return nil;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    if (self.tableView == tableView) {
+    if (self.tableView == tableView)
+    {
         return self.groupTitleArray[section];
     }
+    
     return nil;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    if (self.tableView == tableView) {
+    if (self.tableView == tableView)
+    {
         return 30.f;
     }
+    
     return 5.f;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
-    if (self.tableView == tableView) {
+    if (self.tableView == tableView)
+    {
     }
+    
     return 0.1f;
 }
 
@@ -114,17 +132,18 @@
     self.usualListSearchDataSource = resultArray[0];
     self.traderListSearchDataSource = resultArray[1];
     self.searchDataSource = [NSMutableArray array];
-    for (NDSearchStockCompanyModel *model in self.usualListSearchDataSource) {
+    for (NDSearchStockCompanyModel *model in self.usualListSearchDataSource)
+    {
         [self.searchDataSource addObject:model];
     }
-    for (NDSearchStockCompanyModel *model in self.traderListSearchDataSource) {
+    for (NDSearchStockCompanyModel *model in self.traderListSearchDataSource)
+    {
         [self.searchDataSource addObject:model];
     }
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
     [self.searchDisplayController.searchResultsTableView reloadData];
 #pragma clang diagnostic pop
-
 }
 
 
@@ -132,11 +151,13 @@
 
 - (void)nd_getIndexLetter
 {
-    for (NSString *aleph in [NSArray arrayWithObjects: @"A", @"B", @"C", @"D", @"E", @"F", @"G", @"H", @"I", @"J", @"K", @"L", @"M", @"N", @"O", @"P", @"Q", @"R", @"S", @"T", @"U", @"V", @"W", @"X", @"Y", @"Z", nil]) {
+    for (NSString *aleph in [NSArray arrayWithObjects: @"A", @"B", @"C", @"D", @"E", @"F", @"G", @"H", @"I", @"J", @"K", @"L", @"M", @"N", @"O", @"P", @"Q", @"R", @"S", @"T", @"U", @"V", @"W", @"X", @"Y", @"Z", nil])
+    {
         NSPredicate *alephPredicate = [NSPredicate predicateWithFormat:@"%K BEGINSWITH[cd] %@",@"cSpell",aleph];
         NSArray *tempArray = [self.traderListDataSource filteredArrayUsingPredicate:alephPredicate];
         
-        if (tempArray.count > 0) {
+        if (tempArray.count > 0)
+        {
             self.filterDictionary[aleph] = tempArray;
         }
     }
@@ -150,7 +171,8 @@
 
 - (NSMutableArray *)usualListDataSource
 {
-    if (_usualListDataSource) {
+    if (_usualListDataSource)
+    {
         return _usualListDataSource;
     }
     
@@ -161,7 +183,8 @@
     NSArray *fileArray = dict[@"usualList"];
     
     
-    for (NSDictionary *dict in fileArray) {
+    for (NSDictionary *dict in fileArray)
+    {
         NDSearchStockCompanyModel *model = [[NDSearchStockCompanyModel alloc] init];
         model.name = dict[@"name"];
         model.cSpell = dict[@"cSpell"];
@@ -173,7 +196,8 @@
 
 - (NSMutableArray *)traderListDataSource
 {
-    if (_traderListDataSource) {
+    if (_traderListDataSource)
+    {
         return _traderListDataSource;
     }
     
@@ -184,7 +208,8 @@
     NSArray *fileArray = dict[@"traderList"];
     
     
-    for (NSDictionary *dict in fileArray) {
+    for (NSDictionary *dict in fileArray)
+    {
         NDSearchStockCompanyModel *model = [[NDSearchStockCompanyModel alloc] init];
         model.name = dict[@"name"];
         model.cSpell = dict[@"cSpell"];
@@ -196,7 +221,8 @@
 
 - (NSMutableArray *)groupTitleArray
 {
-    if (_groupTitleArray) {
+    if (_groupTitleArray)
+    {
         return _groupTitleArray;
     }
     
@@ -207,7 +233,8 @@
 
 - (NSMutableDictionary *)filterDictionary
 {
-    if (_filterDictionary) {
+    if (_filterDictionary)
+    {
         return _filterDictionary;
     }
     

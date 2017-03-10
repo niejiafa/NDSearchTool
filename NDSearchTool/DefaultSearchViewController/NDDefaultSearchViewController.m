@@ -27,9 +27,10 @@
 
 @implementation NDDefaultSearchViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
     self.tableView.tableHeaderView = self.searchBar;
 }
 
@@ -39,7 +40,8 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (self.tableView == tableView) {
+    if (self.tableView == tableView)
+    {
         return self.dataSource.count;
     }
     
@@ -50,14 +52,18 @@
 {
     static NSString *ID = @"cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-    if (!cell) {
+    if (!cell)
+    {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
     }
     
     NDSearchStockModel *model;
-    if (self.tableView == tableView) {
+    if (self.tableView == tableView)
+    {
         model = self.dataSource[indexPath.row];
-    } else {
+    }
+    else
+    {
         model = self.searchDataSource[indexPath.row];
     }
     
@@ -74,6 +80,7 @@
     self.searchDataSource = (NSMutableArray *)[[NDSearchTool tool] searchWithFieldArray:@[@"name",@"pingyin",@"code"]
                                                                             inputString:searchText
                                                                                 inArray:self.dataSource];
+    
     [self.searchDisplayController.searchResultsTableView reloadData];
 }
 
@@ -81,7 +88,8 @@
 
 - (NSMutableArray *)dataSource
 {
-    if (_dataSource) {
+    if (_dataSource)
+    {
         return _dataSource;
     }
     
@@ -90,11 +98,13 @@
     NSString *path = [[NSBundle mainBundle] pathForResource:@"stockList" ofType:@"plist"];
     NSArray *fileArray = [NSArray arrayWithContentsOfFile:path];
     
-    for (NSDictionary *dict in fileArray) {
+    for (NSDictionary *dict in fileArray)
+    {
         NDSearchStockModel *model = [[NDSearchStockModel alloc] init];
         model.name = dict[@"name"];
         model.pingyin = dict[@"pingyin"];
         model.code = dict[@"code"];
+        
         [_dataSource addObject:model];
     }
     
@@ -103,7 +113,8 @@
 
 - (UISearchBar *)searchBar
 {
-    if (_searchBar) {
+    if (_searchBar)
+    {
         return _searchBar;
     }
     
@@ -116,7 +127,8 @@
 
 - (UISearchDisplayController *)searchDisplayController
 {
-    if (_searchDisplayController) {
+    if (_searchDisplayController)
+    {
         return _searchDisplayController;
     }
     
@@ -126,4 +138,5 @@
     
     return _searchDisplayController;
 }
+
 @end
